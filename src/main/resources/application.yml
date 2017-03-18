@@ -1,0 +1,6 @@
+spring:
+  couchbase:
+    bootstrap-hosts: localhost
+  data:
+    couchbase:
+      auto-index: true
