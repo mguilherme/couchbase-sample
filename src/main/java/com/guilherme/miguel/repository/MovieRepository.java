@@ -16,4 +16,8 @@ public interface MovieRepository extends CouchbaseRepository<Movie, String> {
 
     Collection<Movie> findByTitle(String title);
 
+    Collection<Movie> findByTitleLike(String title);
+
+    Collection<Movie> findByTitleStartingWith(String title);
+
 }
