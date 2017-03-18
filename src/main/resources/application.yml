@@ -1,6 +1,9 @@
 spring:
   couchbase:
     bootstrap-hosts: localhost
+    bucket:
+      name: movie
   data:
     couchbase:
       auto-index: true
+
