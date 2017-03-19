@@ -16,11 +16,11 @@ import static java.util.UUID.randomUUID;
  */
 @Slf4j
 @Component
-public class Sample implements CommandLineRunner {
+public class MovieSample implements CommandLineRunner {
 
     private MovieRepository movieRepository;
 
-    public Sample(MovieRepository movieRepository) {
+    public MovieSample(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }
 
