@@ -29,6 +29,11 @@ public class Movie {
     private String title;
 
     @Getter
+    @Setter
+    @NonNull
+    private String director;
+
+    @Getter
     @LastModifiedDate
     private Date lastModifiedDate;
 

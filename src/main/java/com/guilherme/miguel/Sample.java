@@ -31,16 +31,22 @@ public class Sample implements CommandLineRunner {
 
         // Add Movies
         Stream.of("Gone with the Wind", "The Wizard of Oz", "One Flew over the Cuckoo's Nest", "Dr. Strangelove", "The Founder", "Gone in 60 Seconds")
-                .forEach(title -> movieRepository.save(new Movie(randomUUID().toString(), title)));
+                .forEach(title -> movieRepository.save(new Movie(randomUUID().toString(), title, "Some director")));
 
         // Add one movie
-        Movie someMovie = movieRepository.save(new Movie(randomUUID().toString(), "Logan"));
+        Movie someMovie = movieRepository.save(new Movie(randomUUID().toString(), "Logan", "James Mangold"));
 
         // Retrieve one movie
         Movie oneMovie = movieRepository.findOne(someMovie.getId());
         boolean exists = movieRepository.exists(someMovie.getId());
         log.info("Some movie by ID: {}", oneMovie);
         log.info("Exists? {}", exists);
+
+        // Update Movie
+        oneMovie.setDirector("New James Mangold");
+        movieRepository.save(oneMovie);
+        Movie updatedMovie = movieRepository.findOne(someMovie.getId());
+        log.info("Updated movie: {}", updatedMovie);
 
         // Count
         long count = movieRepository.count();
@@ -61,6 +67,10 @@ public class Sample implements CommandLineRunner {
         // Starting with
         Collection<Movie> moviesStartingWith = movieRepository.findByTitleStartingWith("Gone");
         log.info("Movies starting with 'Gone': {}", moviesStartingWith);
+
+        // N1QL Query
+        Collection<Movie> moviesByDirector = movieRepository.findDirector();
+        log.info("Movies by director with N1QL: {}", moviesByDirector);
 
     }
 }
