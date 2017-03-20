@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.couchbase.core.mapping.Document;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * @author Miguel Guilherme
@@ -35,9 +35,9 @@ public class Movie {
 
     @Getter
     @LastModifiedDate
-    private Date lastModifiedDate;
+    private LocalDateTime lastModifiedDate;
 
     @Getter
     @CreatedDate
-    private Date createdDate;
+    private LocalDateTime createdDate;
 }

@@ -13,7 +13,7 @@ import static java.util.UUID.randomUUID;
  * @author Miguel Guilherme
  */
 @Slf4j
-@Component
+//@Component
 public class ActorSample implements CommandLineRunner {
 
     private ActorRepository actorRepository;

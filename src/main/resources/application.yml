@@ -3,6 +3,7 @@ spring:
     bootstrap-hosts: localhost
     bucket:
       name: movie
+#      password:
   data:
     couchbase:
       auto-index: true
