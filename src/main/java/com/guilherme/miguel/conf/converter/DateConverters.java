@@ -11,13 +11,14 @@ import static java.time.LocalDateTime.ofInstant;
 import static java.time.ZoneId.systemDefault;
 
 /**
+ * Java 8 Date Converters
+ *
  * @author Miguel Guilherme
  */
 
 public class DateConverters {
 
     @WritingConverter
-//    @ReadingConverter
     public enum LocalDateTimeToLong implements Converter<LocalDateTime, Long> {
         INSTANCE;
 
@@ -29,7 +30,6 @@ public class DateConverters {
     }
 
     @ReadingConverter
-//    @WritingConverter
     public enum NumberToLocalDateTime implements Converter<Number, LocalDateTime> {
         INSTANCE;
 
